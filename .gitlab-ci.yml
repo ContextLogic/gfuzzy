@@ -7,7 +7,7 @@ upload_egg:
     - git config --global user.email "null@null.com"
     - git config --global user.name "null"
     # Check if the package is actually installable
-    - apt-get install -y python
+    - apt-get install -y python curl
     - apt-get install -y python-dev libffi-dev
     - curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
     - python get-pip.py
