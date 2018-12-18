@@ -9,7 +9,7 @@ upload_egg:
 
     # Check if the package is actually installable
     - apk add python
-    - apk add --no-cache --virtual .build-deps gcc
+    - apk add --no-cache --virtual .build-deps gcc musl-dev
     - apk add python-dev
     - apk add libffi-dev openssl-dev
     - apk add py-pip
@@ -24,10 +24,10 @@ upload_egg:
     - pip install .
     - pip show $CI_PROJECT_NAME
 
-  #   # Upload to Wish Pypi
-  #   - devpi use $PYPI_SERVER
-  #   - devpi login $USERNAME --password=$PASSWORD
-  #   - devpi use $INDEX
-  #   - devpi upload
-  # only:
-  #   - master
+    # Upload to Wish Pypi
+    - devpi use $PYPI_SERVER
+    - devpi login $USERNAME --password=$PASSWORD
+    - devpi use $INDEX
+    - devpi upload
+  only:
+    - master
