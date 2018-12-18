@@ -10,7 +10,7 @@ upload_egg:
     - apt-get install -y python
     - apt-get install -y python-dev libffi-dev
     - apt-get install -y python-pip
-    - pip install --upgrade setuptools pip
+    - pip install -U --upgrade setuptools pip
     - pip install -U devpi-client
 
     # make sure there's only 1 "version=" line in the setup.py file
