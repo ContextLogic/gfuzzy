@@ -41,7 +41,6 @@ upload_egg:
     # Check if the package is actually installable
     - apt-get install -y python
     - apt-get install -y python-dev
-    - apt-get install -y libffi-dev openssl-dev
     - apt-get install -y py-pip
     - pip install -U devpi-web devpi-client
 
