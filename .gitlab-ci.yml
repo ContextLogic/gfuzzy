@@ -7,7 +7,7 @@ upload_egg:
     - git config --global user.email "null@null.com"
     - git config --global user.name "null"
     # Check if the package is actually installable
-    - apt-get build-deps build-essential 
+    - apt-get install -y build-essential gcc
     - apt-get install -y python
     - apt-get install -y python-dev libffi-dev
     - apt-get install -y python-pip 
