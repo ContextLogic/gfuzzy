@@ -41,7 +41,7 @@ upload_egg:
     # Check if the package is actually installable
     - apt-get install -y python
     - apt-get install -y python-dev
-    - apt-get install -y py-pip
+    - apt-get install -y python-pip
     - pip install -U devpi-web devpi-client
 
     # make sure there's only 1 "version=" line in the setup.py file
@@ -52,3 +52,4 @@ upload_egg:
     - sed -i "s/$version_origin/$version_cl/g" setup.py
     - pip install .
     - pip show $CI_PROJECT_NAME
+    - ldd --version
