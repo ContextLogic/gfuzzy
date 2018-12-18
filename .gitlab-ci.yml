@@ -2,39 +2,7 @@ image: ubuntu
   
 upload_egg:
   script:
-    # # add git as part of the egg upload
-    # - apk update && apk add git
-    # - git config --global user.email "null@null.com"
-    # - git config --global user.name "null"
-
-    # - apk --no-cache --allow-untrusted -X https://apkproxy.herokuapp.com/sgerrand/alpine-pkg-glibc add glibc glibc-bin
-    # - ldd --version
-    # # Check if the package is actually installable
-    # - apk add python
-    # - apk add --no-cache --virtual .build-deps gcc 
-    # - apk add python-dev
-    # - apk add libffi-dev openssl-dev
-    # - apk add py-pip
-    # - pip install -U devpi-web devpi-client
-
-    # # make sure there's only 1 "version=" line in the setup.py file
-    # - (if [ "$(sed -n "/.*\(version\).*=.*\'.*/p" setup.py | sed 's/^.*[^0-9]\([0-9]*\.[0-9]*\).*$/\1/' | wc -l)" == "1" ]; then echo "Found the version number"; else echo "Fail"; exit 33; fi);
-    # # update version to put custom ContextLogic version
-    # - version_origin=$(sed -n "/.*\(version\).*=.*\'.*/p" setup.py | sed 's/^.*[^0-9]\([0-9]*\.[0-9]*\).*$/\1/')
-    # - version_cl="$version_origin+cl$CI_PIPELINE_ID"
-    # - sed -i "s/$version_origin/$version_cl/g" setup.py
-    # - pip install .
-    # - pip show $CI_PROJECT_NAME
-
-  #   # Upload to Wish Pypi
-  #   - devpi use $PYPI_SERVER
-  #   - devpi login $USERNAME --password=$PASSWORD
-  #   - devpi use $INDEX
-  #   - devpi upload
-  # only:
-  #   - master
-
-      # add git as part of the egg upload
+    # add git as part of the egg upload
     - apt-get update -y && apt-get install -y git
     - git config --global user.email "null@null.com"
     - git config --global user.name "null"
@@ -52,7 +20,7 @@ upload_egg:
     - sed -i "s/$version_origin/$version_cl/g" setup.py
     - pip install .
     - pip show $CI_PROJECT_NAME
-    - lsb_release -a
+    - cat /etc/os-release
 
   #   # Upload to Wish Pypi
   #   - devpi use $PYPI_SERVER
