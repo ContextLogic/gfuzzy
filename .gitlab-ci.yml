@@ -1,4 +1,4 @@
-image: alpine
+image: alpine-glibc
   
 upload_egg:
   script:
@@ -9,7 +9,7 @@ upload_egg:
 
     # Check if the package is actually installable
     - apk add python
-    - apk add --no-cache --virtual .build-deps gcc libc6
+    - apk add --no-cache --virtual .build-deps gcc 
     - apk add python-dev
     - apk add libffi-dev openssl-dev
     - apk add py-pip
