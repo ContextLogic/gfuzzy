@@ -3,6 +3,7 @@ image: ubuntu:14.04
 upload_egg:
   script:
     # add git as part of the egg upload
+    - cat /etc/os-release
     - apt-get update -y && apt-get install -y git
     - git config --global user.email "null@null.com"
     - git config --global user.name "null"
@@ -20,8 +21,7 @@ upload_egg:
     - sed -i "s/$version_origin/$version_cl/g" setup.py
     - pip install .
     - pip show $CI_PROJECT_NAME
-    - cat /etc/os-release
-
+    
   #   # Upload to Wish Pypi
   #   - devpi use $PYPI_SERVER
   #   - devpi login $USERNAME --password=$PASSWORD
