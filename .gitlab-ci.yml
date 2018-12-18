@@ -9,8 +9,8 @@ upload_egg:
     - git config --global user.name "null"
     # Check if the package is actually installable
     - apt-get install -y python
-    - apt-get install -y python-dev
-    - apt-get install -y python-pip
+    - apt-get install -y python-dev libffi-dev
+    - apt-get install -y python-pip 
     - pip install -U devpi-web devpi-client
 
     # make sure there's only 1 "version=" line in the setup.py file
