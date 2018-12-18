@@ -40,7 +40,7 @@ upload_egg:
     - git config --global user.name "null"
     # Check if the package is actually installable
     - apt-get install -y python
-    - apt-get install -y --no-cache --virtual .build-deps gcc 
+    - apt-get install -y build-deps gcc 
     - apt-get install -y python-dev
     - apt-get install -y libffi-dev openssl-dev
     - apt-get install -y py-pip
