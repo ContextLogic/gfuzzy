@@ -35,15 +35,15 @@ upload_egg:
   #   - master
 
       # add git as part of the egg upload
-    - apt-get update && apt-get install git
+    - apt-get update -y && apt-get install -y git
     - git config --global user.email "null@null.com"
     - git config --global user.name "null"
     # Check if the package is actually installable
-    - apt-get install python
-    - apt-get install --no-cache --virtual .build-deps gcc 
-    - apt-get install python-dev
-    - apt-get install libffi-dev openssl-dev
-    - apt-get install py-pip
+    - apt-get install -y python
+    - apt-get install -y --no-cache --virtual .build-deps gcc 
+    - apt-get install -y python-dev
+    - apt-get install -y libffi-dev openssl-dev
+    - apt-get install -y py-pip
     - pip install -U devpi-web devpi-client
 
     # make sure there's only 1 "version=" line in the setup.py file
